@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-color: #040404;
+}
+
+.bounce2 {
+  animation: bounce2 2s ease infinite;
+}
+@keyframes bounce2 {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+
+
+
+.pulse {
+  animation: pulse 1s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from { transform: scale(0.8); }
+  to { transform: scale(1.2); }
+}
+
+
+.moving {
+  position: relative;
+  /* animation: center-to-top 2s; */
+}
+
+
+@keyframes center-to-down-left-corner {
+  from {right:0px;
+    top: 0px;}
+  to {right:75px;
+    top: 75px;}
+}
+
+@keyframes center-to-up-right-corner {
+  from {right:0px;
+    top: 0px;}
+  to {right:-75px;
+    top: -75px;}
+}
+
+@keyframes center-to-up-left-corner {
+  from {left:0px;
+    top: 0px;}
+  to {left:-75px;
+    top: -75px;}
+}
+
+@keyframes center-to-down-right-corner {
+  from {left:0px;
+    top: 0px;}
+  to {left:-75px;
+    top: -75px;}
+}
+
+@keyframes center-to-left {
+  from {left: 0px;}
+  to {left: -75px;}
+}
+
+@keyframes center-to-right {
+  from {left: 0px;}
+  to {left: 75px;}
+}
+
+@keyframes center-to-top {
+  from {top: 0px;}
+  to {top: -150px;}
+}
+
+@keyframes center-to-down {
+  from {top: 0px;}
+  to {top: 75px;}
+}
