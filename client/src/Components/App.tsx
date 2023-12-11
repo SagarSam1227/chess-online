@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SingleBox from "./SingleBox";
-import { board } from "../constants/Array";
 import { useSelector } from "react-redux";
-import store from "../redux/store";
 
 export interface rootState{
   board:{board:string[]}
@@ -17,6 +15,7 @@ function App() {
   const [selectedIndex,setSelectedIndex] =useState<number | null>(null)
 
 
+
   return (
     <>
       <div
@@ -27,12 +26,18 @@ function App() {
           return (
             <>
               <SingleBox index={index} box={box} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
+
             </>
           );
         })}
         {/* <div className='w-[4.5rem] h-[4.5rem] border border-[#ffffffad] bg-[#ffffff1c]'></div>
       <div className='w-[4.5rem] h-[4.5rem] border border-[#ffffffad] bg-[#000000b0]'></div> */}
+      
+      <audio id="myAudio">
+  <source src="chess-move-sound.mp3" type="audio/mpeg"></source>
+</audio>         
       </div>
+
     </>
   );
 }

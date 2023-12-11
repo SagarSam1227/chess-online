@@ -6,8 +6,8 @@ function handleBishop(desIndex: number, prevIndex: number, board: string[]) {
 
     let animation: { animationValue: { from: string; to: string }, animationName: string } = { animationValue: { from: '', to: '' }, animationName: '' }
     let flag: boolean = false
-    const newBoard = [...board];
-    let difference = 0
+    const newBoard:string[] = [...board];
+    let difference:number = 0
     if ((prevIndex - desIndex) % 9 == 0) {
         difference = 9
     } else {
@@ -24,8 +24,8 @@ function handleBishop(desIndex: number, prevIndex: number, board: string[]) {
 
         if (isBgSame) {
 
-            let check = 1
-            
+            let check:number = 1
+
             for (let i = prevIndex > desIndex ? prevIndex - difference : prevIndex + difference; prevIndex > desIndex ? i >= desIndex : i <= desIndex; prevIndex > desIndex ? i-- : i++) {
 
                 // if((prevIndex-i)%9==0 || (prevIndex-i)%7 == 0){
@@ -67,4 +67,5 @@ function handleBishop(desIndex: number, prevIndex: number, board: string[]) {
     return { newBoard, flag, animationValue: animation?.animationValue, animation: animation?.animationName }
 }
 
+export type HandleBishopReturnType =ReturnType<typeof handleBishop>;
 export default handleBishop;

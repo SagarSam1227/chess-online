@@ -59,8 +59,9 @@ useEffect(()=>{
         <div onClick={()=>{
             controlClick()
             setSelectedIndex(index)
-        }} id={`${index}`} className={`${box.trim()?selectedIndex==index?'border border-[black] border-b-4 border-s-2 ':'':''} w-[4.5rem] h-[4.5rem] shadow-sm  bg-[${currentColor}]`}>
-            <h1 className="text-white absolute font-mono text-xs">{index}</h1>
+        }} id={`${index}`}
+         className={`${box.trim()?selectedIndex==index?'border border-black border-b-4 border-s-2 ':'':''} w-[4.5rem] h-[4.5rem] shadow-sm  bg-[${currentColor}]`}>
+            {/* <h1 className="text-white absolute font-mono text-xs">{index}</h1> */}
             {box.trim()?
             <img className={`w-full h-full object-center relative object-contain ${selectedIndex==index? 'bounce2':''}`}  src={box} alt=""/>:
             <>

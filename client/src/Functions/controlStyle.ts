@@ -1,15 +1,15 @@
 function controlStyle(from: string, to: string, keyFrameName: string) {
-  const styleSheets = document.styleSheets;
+  const styleSheets: StyleSheetList = document.styleSheets;
 
   for (let i = 0; i < styleSheets.length; i++) {
-    const styleSheet = styleSheets[i];
+    const styleSheet: CSSStyleSheet = styleSheets[i];
 
     for (let j = 0; j < styleSheet.cssRules.length; j++) {
-      const cssRule = styleSheet.cssRules[j];
+      const cssRule: CSSRule = styleSheet.cssRules[j];
 
       // Check if it's a keyframes rule and get its name
       if (cssRule.type === window.CSSRule.KEYFRAMES_RULE && cssRule instanceof window.CSSKeyframesRule) {
-        const keyframesRule = cssRule;
+        const keyframesRule: CSSKeyframesRule = cssRule;
         if (keyframesRule.name === keyFrameName) {
           // Modify the keyframes by changing its values
           keyframesRule.deleteRule('from');
@@ -31,11 +31,11 @@ function controlStyle(from: string, to: string, keyFrameName: string) {
 
 export function checkBackground(des: number, prev: number) {
 
-  const prevElement = document.getElementById(`${prev}`)
-  const desElement = document.getElementById(`${des}`)
+  const prevElement: HTMLElement | null = document.getElementById(`${prev}`)
+  const desElement: HTMLElement | null = document.getElementById(`${des}`)
   if (prevElement && desElement) {
-    const prevBgColor = window.getComputedStyle(prevElement).backgroundColor;
-    const desBgColor = window.getComputedStyle(desElement).backgroundColor;
+    const prevBgColor: string = window.getComputedStyle(prevElement).backgroundColor;
+    const desBgColor: string = window.getComputedStyle(desElement).backgroundColor;
     if (desBgColor == prevBgColor) {
       return true
     }

@@ -5,9 +5,9 @@ function handlePawn(desIndex: number, prevIndex: number, board: string[]) {
     let flag:boolean = false
     let animation:string = 'center-to-top'
     let animationValue:{from:string;to:string} = {from:'',to:''}
-    const des = desIndex
-    const prev = prevIndex
-    const newBoard = [...board];
+    const des:number = desIndex
+    const prev:number = prevIndex
+    const newBoard:string[] = [...board];
 
     console.log(typeof (desIndex));
 

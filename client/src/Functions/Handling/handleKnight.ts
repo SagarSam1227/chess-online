@@ -6,12 +6,12 @@ function handleKnight(des: number, prev: number, board: string[]) {
 
     let animation: { animationValue: { from: string; to: string }, animationName: string } = { animationValue: { from: '', to: '' }, animationName: '' }
     let flag: boolean = false
-    const newBoard = [...board];
+    const newBoard: string[]= [...board];
 
 
     if (!board[des].trim()) {
 
-        const isBgSame = checkBackground(des, prev)
+        const isBgSame :boolean= checkBackground(des, prev)
 
 
         if (!isBgSame) {
